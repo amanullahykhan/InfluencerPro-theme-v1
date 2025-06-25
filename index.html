@@ -6,8 +6,8 @@
     Theme Name: InfluencerPro - Modern Influencer Personal Brand Website
     Author: Amanullah Khan
     Company: Nexaman Creations
-    Website: www.nexamancreations.com
-    Email: support@nexamancreations.com
+    Website: www.nexaman.site
+    Email: hireme@nexaman.site
     
     Release Date: June 2025
     License: Premium Theme
@@ -17,12 +17,15 @@
     Features bold typography, interactive animations, and responsive design.
     
     Copyright (c) 2025 Nexaman Creations. All rights reserved.
+    For inquiries: hireme@nexaman.site | Visit: www.nexaman.site
 -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-author" content="Amanullah Khan">
     <meta name="theme-company" content="Nexaman Creations">
+    <meta name="theme-website" content="www.nexaman.site">
+    <meta name="theme-email" content="hireme@nexaman.site">
     <meta name="theme-version" content="1.0.0">
     <title>Gimmy Corner - Digital Influencer</title>
     <style>
@@ -34,7 +37,8 @@
         Theme: InfluencerPro
         Author: Amanullah Khan  
         Company: Nexaman Creations
-        Website: www.nexamancreations.com
+        Website: www.nexaman.site
+        Email: hireme@nexaman.site
         License: Premium Theme
         
         Description: Modern, responsive stylesheet for 
@@ -42,6 +46,7 @@
         bold typography and interactive animations.
         
         Copyright (c) 2025 Nexaman Creations
+        Contact: hireme@nexaman.site | www.nexaman.site
         =========================================
         */
 
@@ -121,7 +126,7 @@
             width: 100%;
         }
 
-        /* Hero Section with Video Background */
+        /* Hero Section with Main Slider */
         .hero {
             height: 100vh;
             position: relative;
@@ -132,14 +137,50 @@
             overflow: hidden;
         }
 
-        .hero-video {
+        .hero-slider {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            z-index: -2;
+            z-index: 1;
+        }
+
+        .hero-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 2s ease-in-out;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .hero-slide.active {
+            opacity: 1;
+        }
+
+        .hero-slide:nth-child(1) {
+            background-image: linear-gradient(45deg, rgba(255, 20, 147, 0.7), rgba(0, 0, 0, 0.5)), 
+                              url('https://images.unsplash.com/photo-1494790108755-2616b612b647?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+        }
+
+        .hero-slide:nth-child(2) {
+            background-image: linear-gradient(45deg, rgba(255, 105, 180, 0.7), rgba(0, 0, 0, 0.5)), 
+                              url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+        }
+
+        .hero-slide:nth-child(3) {
+            background-image: linear-gradient(45deg, rgba(255, 20, 147, 0.6), rgba(255, 105, 180, 0.4)), 
+                              url('https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+        }
+
+        .hero-slide:nth-child(4) {
+            background-image: linear-gradient(45deg, rgba(255, 69, 180, 0.7), rgba(0, 0, 0, 0.4)), 
+                              url('https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
         }
 
         .hero-overlay {
@@ -148,14 +189,95 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(45deg, rgba(255, 20, 147, 0.3), rgba(0, 0, 0, 0.7));
-            z-index: -1;
+            background: rgba(0, 0, 0, 0.2);
+            z-index: 2;
         }
 
         .hero-content {
-            z-index: 1;
+            z-index: 10;
             max-width: 800px;
             padding: 0 20px;
+            position: relative;
+        }
+
+        /* Hero Navigation */
+        .hero-nav {
+            position: absolute;
+            bottom: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 15px;
+            z-index: 15;
+        }
+
+        .hero-dot {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .hero-dot.active {
+            background: #ff1493;
+            transform: scale(1.3);
+            box-shadow: 0 0 20px rgba(255, 20, 147, 0.8);
+        }
+
+        /* Floating Elements */
+        .floating-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 3;
+            pointer-events: none;
+        }
+
+        .floating-icon {
+            position: absolute;
+            font-size: 2rem;
+            opacity: 0.6;
+            animation: floatInfluencer 8s ease-in-out infinite;
+        }
+
+        .floating-icon:nth-child(1) {
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-icon:nth-child(2) {
+            top: 60%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+
+        .floating-icon:nth-child(3) {
+            top: 30%;
+            right: 30%;
+            animation-delay: 4s;
+        }
+
+        .floating-icon:nth-child(4) {
+            bottom: 30%;
+            left: 20%;
+            animation-delay: 6s;
+        }
+
+        .floating-icon:nth-child(5) {
+            top: 70%;
+            left: 40%;
+            animation-delay: 3s;
+        }
+
+        .floating-icon:nth-child(6) {
+            top: 15%;
+            right: 40%;
+            animation-delay: 5s;
         }
 
         .hero h1 {
@@ -318,13 +440,19 @@
         .portfolio-image {
             width: 100%;
             height: 250px;
-            background: linear-gradient(45deg, #ff1493, #ff69b4);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: #fff;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .portfolio-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .portfolio-item:hover .portfolio-image img {
+            transform: scale(1.1);
         }
 
         .portfolio-content {
@@ -464,9 +592,19 @@
             }
         }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
+        @keyframes floatInfluencer {
+            0%, 100% { 
+                transform: translateY(0px) translateX(0px) rotate(0deg); 
+            }
+            25% { 
+                transform: translateY(-20px) translateX(15px) rotate(5deg); 
+            }
+            50% { 
+                transform: translateY(-30px) translateX(-10px) rotate(-3deg); 
+            }
+            75% { 
+                transform: translateY(-15px) translateX(20px) rotate(8deg); 
+            }
         }
 
         @keyframes fadeIn {
@@ -798,16 +936,42 @@
         <a href="#" class="social-icon">💼</a>
     </div>
 
-    <!-- Hero Section -->
+    <!-- Hero Section with Main Slider -->
     <section id="home" class="hero">
-        <video class="hero-video" autoplay muted loop>
-            <source src="data:video/mp4;base64," type="video/mp4">
-        </video>
+        <!-- Main Image Slider -->
+        <div class="hero-slider">
+            <div class="hero-slide active"></div>
+            <div class="hero-slide"></div>
+            <div class="hero-slide"></div>
+            <div class="hero-slide"></div>
+        </div>
+        
+        <!-- Hero Overlay -->
         <div class="hero-overlay"></div>
+
+        <!-- Floating Elements -->
+        <div class="floating-elements">
+            <div class="floating-icon">📸</div>
+            <div class="floating-icon">🎬</div>
+            <div class="floating-icon">💄</div>
+            <div class="floating-icon">👗</div>
+            <div class="floating-icon">✨</div>
+            <div class="floating-icon">💎</div>
+        </div>
+
+        <!-- Hero Content -->
         <div class="hero-content">
             <h1>GIMMY CORNER</h1>
             <p>Digital Lifestyle Influencer & Content Creator</p>
             <a href="#contact" class="cta-button">Let's Collaborate</a>
+        </div>
+
+        <!-- Hero Navigation -->
+        <div class="hero-nav">
+            <div class="hero-dot active" data-slide="0"></div>
+            <div class="hero-dot" data-slide="1"></div>
+            <div class="hero-dot" data-slide="2"></div>
+            <div class="hero-dot" data-slide="3"></div>
         </div>
     </section>
 
@@ -838,42 +1002,54 @@
         <h2 class="section-title">Featured Collaborations</h2>
         <div class="portfolio-grid">
             <div class="portfolio-item">
-                <div class="portfolio-image">Fashion Campaign</div>
+                <div class="portfolio-image">
+                    <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Fashion Campaign" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
                 <div class="portfolio-content">
                     <h3 class="portfolio-title">Luxury Fashion Brand</h3>
                     <p class="portfolio-description">Exclusive partnership featuring summer collection with 5M+ reach and 8.5% engagement rate.</p>
                 </div>
             </div>
             <div class="portfolio-item">
-                <div class="portfolio-image">Tech Review</div>
+                <div class="portfolio-image">
+                    <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Tech Review" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
                 <div class="portfolio-content">
                     <h3 class="portfolio-title">Smartphone Launch</h3>
                     <p class="portfolio-description">Comprehensive product review and unboxing content generating 2.3M views across platforms.</p>
                 </div>
             </div>
             <div class="portfolio-item">
-                <div class="portfolio-image">Travel Content</div>
+                <div class="portfolio-image">
+                    <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Travel Content" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
                 <div class="portfolio-content">
                     <h3 class="portfolio-title">Tourism Board Partnership</h3>
                     <p class="portfolio-description">Destination showcase series featuring luxury resorts and local experiences.</p>
                 </div>
             </div>
             <div class="portfolio-item">
-                <div class="portfolio-image">Beauty Campaign</div>
+                <div class="portfolio-image">
+                    <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Beauty Campaign" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
                 <div class="portfolio-content">
                     <h3 class="portfolio-title">Skincare Brand Collab</h3>
                     <p class="portfolio-description">30-day skincare journey documenting real results with authentic storytelling.</p>
                 </div>
             </div>
             <div class="portfolio-item">
-                <div class="portfolio-image">Fitness Content</div>
+                <div class="portfolio-image">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Fitness Content" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
                 <div class="portfolio-content">
                     <h3 class="portfolio-title">Wellness Brand Partnership</h3>
                     <p class="portfolio-description">Workout routine series promoting healthy lifestyle and mental wellness.</p>
                 </div>
             </div>
             <div class="portfolio-item">
-                <div class="portfolio-image">Food Collab</div>
+                <div class="portfolio-image">
+                    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Food Collab" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
                 <div class="portfolio-content">
                     <h3 class="portfolio-title">Restaurant Chain Campaign</h3>
                     <p class="portfolio-description">Menu launch featuring creative food styling and behind-the-scenes content.</p>
@@ -890,18 +1066,34 @@
                 <div class="testimonial active">
                     <p class="testimonial-text">"Working with Gimmy was incredible! The engagement on our campaign exceeded all expectations. Her authentic style really resonates with audiences."</p>
                     <p class="testimonial-author">- Sarah Chen, Brand Manager at LuxeFashion</p>
+                    <div style="margin-top: 15px;">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Sarah Chen" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; margin-right: 10px; vertical-align: middle;">
+                        <span style="vertical-align: middle; color: #ff69b4; font-weight: bold;">LuxeFashion Team</span>
+                    </div>
                 </div>
                 <div class="testimonial">
                     <p class="testimonial-text">"Gimmy's content is always fresh and engaging. She has this amazing ability to make any product feel aspirational yet accessible."</p>
                     <p class="testimonial-author">- Michael Rodriguez, Marketing Director</p>
+                    <div style="margin-top: 15px;">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Michael Rodriguez" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; margin-right: 10px; vertical-align: middle;">
+                        <span style="vertical-align: middle; color: #ff69b4; font-weight: bold;">TechBrand Inc.</span>
+                    </div>
                 </div>
                 <div class="testimonial">
                     <p class="testimonial-text">"The professionalism and creativity Gimmy brings to every collaboration is outstanding. She's become our go-to influencer for major campaigns."</p>
                     <p class="testimonial-author">- Emma Thompson, Creative Director</p>
+                    <div style="margin-top: 15px;">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Emma Thompson" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; margin-right: 10px; vertical-align: middle;">
+                        <span style="vertical-align: middle; color: #ff69b4; font-weight: bold;">Creative Studios</span>
+                    </div>
                 </div>
                 <div class="testimonial">
                     <p class="testimonial-text">"I've been following Gimmy for years. Her content always brightens my day and her recommendations are spot on!"</p>
                     <p class="testimonial-author">- @LifestyleLover23, Loyal Fan</p>
+                    <div style="margin-top: 15px;">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b647?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Fan" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover; margin-right: 10px; vertical-align: middle;">
+                        <span style="vertical-align: middle; color: #ff69b4; font-weight: bold;">Fan Community</span>
+                    </div>
                 </div>
             </div>
             <div class="testimonial-nav">
@@ -919,6 +1111,10 @@
             <h2>Ready to Create Something Amazing?</h2>
             <p>Let's collaborate and bring your brand's vision to life with authentic, engaging content that drives results.</p>
             <a href="mailto:hello@gimmycorner.com" class="contact-button">Get In Touch</a>
+            <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.2);">
+                <p style="font-size: 0.9rem; opacity: 0.8;">Website developed by <strong>Amanullah Khan</strong> | <strong>Nexaman Creations</strong></p>
+                <p style="font-size: 0.9rem; opacity: 0.8;">Contact: <a href="mailto:hireme@nexaman.site" style="color: #ff1493;">hireme@nexaman.site</a> | Visit: <a href="https://www.nexaman.site" style="color: #ff1493;" target="_blank">www.nexaman.site</a></p>
+            </div>
         </div>
     </section>
 
@@ -931,15 +1127,48 @@
         Theme: InfluencerPro
         Author: Amanullah Khan
         Company: Nexaman Creations
-        Website: www.nexamancreations.com
+        Website: www.nexaman.site
+        Email: hireme@nexaman.site
         License: Premium Theme
         
         Interactive functionality for modern
         influencer personal branding websites.
         
         Copyright (c) 2025 Nexaman Creations
+        Contact: hireme@nexaman.site | www.nexaman.site
         ========================================
         */
+
+        // Hero Slider Management
+        let currentHeroSlide = 0;
+        const heroSlides = document.querySelectorAll('.hero-slide');
+        const heroDots = document.querySelectorAll('.hero-dot');
+
+        function showHeroSlide(index) {
+            // Remove active class from all slides and dots
+            heroSlides.forEach(slide => slide.classList.remove('active'));
+            heroDots.forEach(dot => dot.classList.remove('active'));
+            
+            // Add active class to current slide and dot
+            heroSlides[index].classList.add('active');
+            heroDots[index].classList.add('active');
+        }
+
+        function nextHeroSlide() {
+            currentHeroSlide = (currentHeroSlide + 1) % heroSlides.length;
+            showHeroSlide(currentHeroSlide);
+        }
+
+        // Auto advance hero slider every 4 seconds
+        setInterval(nextHeroSlide, 4000);
+
+        // Hero dot navigation
+        heroDots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentHeroSlide = index;
+                showHeroSlide(currentHeroSlide);
+            });
+        });
 
         // Mobile Menu Toggle
         const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
