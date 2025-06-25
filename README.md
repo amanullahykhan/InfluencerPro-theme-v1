@@ -98,19 +98,6 @@ The theme is built around the concept of **"Digital Energy"** - combining bold v
 
 ## ⚙️ Technical Specifications
 
-### File Structure
-```
-influencer-theme/
-├── index.html          # Main HTML file
-├── assets/
-│   ├── css/
-│   │   └── style.css   # All styles embedded
-│   ├── js/
-│   │   └── script.js   # All JavaScript embedded
-│   └── images/         # Theme images and assets
-└── documentation.md    # This file
-```
-
 ### Dependencies
 - **No External Dependencies:** All CSS and JavaScript is self-contained
 - **Font Loading:** System fonts for optimal performance
