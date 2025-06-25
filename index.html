@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+    InfluencerPro Theme v1.0.0
+    
+    Theme Name: InfluencerPro - Modern Influencer Personal Brand Website
+    Author: Amanullah Khan
+    Company: Nexaman Creations
+    Website: www.nexamancreations.com
+    Email: support@nexamancreations.com
+    
+    Release Date: June 2025
+    License: Premium Theme
+    
+    Description: A sleek, modern one-page personal branding website theme 
+    designed specifically for social media influencers and content creators.
+    Features bold typography, interactive animations, and responsive design.
+    
+    Copyright (c) 2025 Nexaman Creations. All rights reserved.
+-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-author" content="Amanullah Khan">
+    <meta name="theme-company" content="Nexaman Creations">
+    <meta name="theme-version" content="1.0.0">
+    <title>Gimmy Corner - Digital Influencer</title>
+    <style>
+        /*
+        =========================================
+        InfluencerPro Theme Stylesheet v1.0.0
+        =========================================
+        
+        Theme: InfluencerPro
+        Author: Amanullah Khan  
+        Company: Nexaman Creations
+        Website: www.nexamancreations.com
+        License: Premium Theme
+        
+        Description: Modern, responsive stylesheet for 
+        influencer personal branding websites with
+        bold typography and interactive animations.
+        
+        Copyright (c) 2025 Nexaman Creations
+        =========================================
+        */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #000;
+            color: #fff;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* Sticky Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 15px 0;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            background: linear-gradient(45deg, #ff1493, #fff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #ff1493;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #ff1493;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section with Video Background */
+        .hero {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -2;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(255, 20, 147, 0.3), rgba(0, 0, 0, 0.7));
+            z-index: -1;
+        }
+
+        .hero-content {
+            z-index: 1;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #ff1493, #fff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: slideInUp 1s ease;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            animation: slideInUp 1s ease 0.2s both;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(45deg, #ff1493, #ff69b4);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            animation: slideInUp 1s ease 0.4s both;
+            box-shadow: 0 10px 30px rgba(255, 20, 147, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 20, 147, 0.5);
+        }
+
+        /* Floating Social Icons */
+        .floating-icons {
+            position: fixed;
+            right: 30px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-decoration: none;
+            font-size: 20px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .social-icon:hover {
+            background: #ff1493;
+            transform: scale(1.1);
+        }
+
+        .social-icon:nth-child(2) { animation-delay: 0.5s; }
+        .social-icon:nth-child(3) { animation-delay: 1s; }
+        .social-icon:nth-child(4) { animation-delay: 1.5s; }
+
+        /* Stats Section with Animated Counters */
+        .stats {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #ff1493, #000);
+            position: relative;
+        }
+
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            padding: 0 20px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #fff;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Portfolio Grid */
+        .portfolio {
+            padding: 100px 0;
+            background: #000;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 60px;
+            background: linear-gradient(45deg, #ff1493, #fff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .portfolio-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            padding: 0 20px;
+        }
+
+        .portfolio-item {
+            background: #111;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(255, 20, 147, 0.3);
+        }
+
+        .portfolio-image {
+            width: 100%;
+            height: 250px;
+            background: linear-gradient(45deg, #ff1493, #ff69b4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .portfolio-content {
+            padding: 30px;
+        }
+
+        .portfolio-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .portfolio-description {
+            opacity: 0.8;
+            line-height: 1.6;
+        }
+
+        /* Testimonials Carousel */
+        .testimonials {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #000, #ff1493);
+        }
+
+        .testimonial-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            padding: 0 20px;
+        }
+
+        .testimonial-slider {
+            overflow: hidden;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 50px;
+        }
+
+        .testimonial {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .testimonial.active {
+            display: block;
+        }
+
+        .testimonial-text {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #ff1493;
+        }
+
+        .testimonial-nav {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        .testimonial-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-dot.active {
+            background: #ff1493;
+            transform: scale(1.2);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background: #000;
+            text-align: center;
+        }
+
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            background: linear-gradient(45deg, #ff1493, #fff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .contact p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .contact-button {
+            display: inline-block;
+            padding: 15px 40px;
+            background: linear-gradient(45deg, #ff1493, #ff69b4);
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .contact-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255, 20, 147, 0.5);
+        }
+
+        /* Animations */
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Parallax Effect */
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .mobile-menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: #fff;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .mobile-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: left 0.3s ease;
+        }
+
+        .mobile-menu.active {
+            left: 0;
+        }
+
+        .mobile-nav-links {
+            list-style: none;
+            text-align: center;
+        }
+
+        .mobile-nav-links li {
+            margin: 30px 0;
+        }
+
+        .mobile-nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 2rem;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .mobile-nav-links a:hover {
+            color: #ff1493;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero h1 { font-size: 3.5rem; }
+            .stats-container { grid-template-columns: repeat(2, 1fr); }
+            .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-toggle {
+                display: flex;
+            }
+            
+            .nav-links { 
+                display: none; 
+            }
+            
+            .hero h1 { 
+                font-size: 2.5rem; 
+                line-height: 1.2;
+            }
+            .hero p { 
+                font-size: 1rem; 
+                margin-bottom: 25px;
+            }
+            .hero-content {
+                padding: 0 15px;
+            }
+            
+            .navbar {
+                padding: 10px 0;
+            }
+            
+            .nav-container {
+                padding: 0 15px;
+            }
+            
+            .logo {
+                font-size: 20px;
+            }
+            
+            .floating-icons { 
+                right: 15px; 
+                gap: 15px;
+            }
+            
+            .social-icon {
+                width: 45px;
+                height: 45px;
+                font-size: 18px;
+            }
+            
+            .section-title { 
+                font-size: 2rem; 
+                margin-bottom: 40px;
+            }
+            
+            .portfolio-grid { 
+                grid-template-columns: 1fr; 
+                gap: 20px;
+                padding: 0 15px;
+            }
+            
+            .stats-container { 
+                grid-template-columns: repeat(2, 1fr); 
+                gap: 20px;
+                padding: 0 15px;
+            }
+            
+            .stat-item {
+                padding: 20px;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+            
+            .stat-label {
+                font-size: 0.9rem;
+            }
+            
+            .stats, .portfolio, .testimonials, .contact {
+                padding: 60px 0;
+            }
+            
+            .testimonial-slider {
+                padding: 30px 20px;
+            }
+            
+            .testimonial-text {
+                font-size: 1.1rem;
+                line-height: 1.6;
+            }
+            
+            .testimonial-author {
+                font-size: 1rem;
+            }
+            
+            .contact h2 {
+                font-size: 2rem;
+            }
+            
+            .contact p {
+                font-size: 1.1rem;
+            }
+            
+            .contact-content, .testimonial-container {
+                padding: 0 15px;
+            }
+            
+            .cta-button, .contact-button {
+                padding: 12px 30px;
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 { 
+                font-size: 2rem; 
+            }
+            
+            .hero p { 
+                font-size: 0.9rem; 
+            }
+            
+            .floating-icons {
+                right: 10px;
+                gap: 12px;
+            }
+            
+            .social-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+            }
+            
+            .section-title { 
+                font-size: 1.8rem; 
+            }
+            
+            .stats-container { 
+                grid-template-columns: 1fr; 
+                gap: 15px;
+            }
+            
+            .stat-item {
+                padding: 15px;
+            }
+            
+            .stat-number {
+                font-size: 1.8rem;
+            }
+            
+            .portfolio-item {
+                border-radius: 15px;
+            }
+            
+            .portfolio-image {
+                height: 200px;
+                font-size: 1rem;
+            }
+            
+            .portfolio-content {
+                padding: 20px;
+            }
+            
+            .portfolio-title {
+                font-size: 1.2rem;
+            }
+            
+            .testimonial-slider {
+                padding: 20px 15px;
+            }
+            
+            .testimonial-text {
+                font-size: 1rem;
+            }
+            
+            .contact h2 {
+                font-size: 1.8rem;
+            }
+            
+            .contact p {
+                font-size: 1rem;
+            }
+            
+            .cta-button, .contact-button {
+                padding: 10px 25px;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 320px) {
+            .hero h1 { 
+                font-size: 1.8rem; 
+            }
+            
+            .section-title { 
+                font-size: 1.5rem; 
+            }
+            
+            .nav-container {
+                padding: 0 10px;
+            }
+            
+            .logo {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">GIMMY CORNER</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#stats">Stats</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <ul class="mobile-nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#stats">Stats</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Floating Social Icons -->
+    <div class="floating-icons">
+        <a href="#" class="social-icon">📷</a>
+        <a href="#" class="social-icon">🎵</a>
+        <a href="#" class="social-icon">📺</a>
+        <a href="#" class="social-icon">💼</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <video class="hero-video" autoplay muted loop>
+            <source src="data:video/mp4;base64," type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>GIMMY CORNER</h1>
+            <p>Digital Lifestyle Influencer & Content Creator</p>
+            <a href="#contact" class="cta-button">Let's Collaborate</a>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section id="stats" class="stats">
+        <div class="stats-container">
+            <div class="stat-item">
+                <span class="stat-number" data-target="2500000">0</span>
+                <span class="stat-label">Instagram Followers</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" data-target="1800000">0</span>
+                <span class="stat-label">TikTok Followers</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" data-target="950000">0</span>
+                <span class="stat-label">YouTube Subscribers</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" data-target="150">0</span>
+                <span class="stat-label">Brand Collaborations</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <h2 class="section-title">Featured Collaborations</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item">
+                <div class="portfolio-image">Fashion Campaign</div>
+                <div class="portfolio-content">
+                    <h3 class="portfolio-title">Luxury Fashion Brand</h3>
+                    <p class="portfolio-description">Exclusive partnership featuring summer collection with 5M+ reach and 8.5% engagement rate.</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <div class="portfolio-image">Tech Review</div>
+                <div class="portfolio-content">
+                    <h3 class="portfolio-title">Smartphone Launch</h3>
+                    <p class="portfolio-description">Comprehensive product review and unboxing content generating 2.3M views across platforms.</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <div class="portfolio-image">Travel Content</div>
+                <div class="portfolio-content">
+                    <h3 class="portfolio-title">Tourism Board Partnership</h3>
+                    <p class="portfolio-description">Destination showcase series featuring luxury resorts and local experiences.</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <div class="portfolio-image">Beauty Campaign</div>
+                <div class="portfolio-content">
+                    <h3 class="portfolio-title">Skincare Brand Collab</h3>
+                    <p class="portfolio-description">30-day skincare journey documenting real results with authentic storytelling.</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <div class="portfolio-image">Fitness Content</div>
+                <div class="portfolio-content">
+                    <h3 class="portfolio-title">Wellness Brand Partnership</h3>
+                    <p class="portfolio-description">Workout routine series promoting healthy lifestyle and mental wellness.</p>
+                </div>
+            </div>
+            <div class="portfolio-item">
+                <div class="portfolio-image">Food Collab</div>
+                <div class="portfolio-content">
+                    <h3 class="portfolio-title">Restaurant Chain Campaign</h3>
+                    <p class="portfolio-description">Menu launch featuring creative food styling and behind-the-scenes content.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <h2 class="section-title">What People Say</h2>
+        <div class="testimonial-container">
+            <div class="testimonial-slider">
+                <div class="testimonial active">
+                    <p class="testimonial-text">"Working with Gimmy was incredible! The engagement on our campaign exceeded all expectations. Her authentic style really resonates with audiences."</p>
+                    <p class="testimonial-author">- Sarah Chen, Brand Manager at LuxeFashion</p>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">"Gimmy's content is always fresh and engaging. She has this amazing ability to make any product feel aspirational yet accessible."</p>
+                    <p class="testimonial-author">- Michael Rodriguez, Marketing Director</p>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">"The professionalism and creativity Gimmy brings to every collaboration is outstanding. She's become our go-to influencer for major campaigns."</p>
+                    <p class="testimonial-author">- Emma Thompson, Creative Director</p>
+                </div>
+                <div class="testimonial">
+                    <p class="testimonial-text">"I've been following Gimmy for years. Her content always brightens my day and her recommendations are spot on!"</p>
+                    <p class="testimonial-author">- @LifestyleLover23, Loyal Fan</p>
+                </div>
+            </div>
+            <div class="testimonial-nav">
+                <span class="testimonial-dot active" data-slide="0"></span>
+                <span class="testimonial-dot" data-slide="1"></span>
+                <span class="testimonial-dot" data-slide="2"></span>
+                <span class="testimonial-dot" data-slide="3"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="contact-content">
+            <h2>Ready to Create Something Amazing?</h2>
+            <p>Let's collaborate and bring your brand's vision to life with authentic, engaging content that drives results.</p>
+            <a href="mailto:hello@gimmycorner.com" class="contact-button">Get In Touch</a>
+        </div>
+    </section>
+
+    <script>
+        /*
+        ========================================
+        InfluencerPro Theme JavaScript v1.0.0
+        ========================================
+        
+        Theme: InfluencerPro
+        Author: Amanullah Khan
+        Company: Nexaman Creations
+        Website: www.nexamancreations.com
+        License: Premium Theme
+        
+        Interactive functionality for modern
+        influencer personal branding websites.
+        
+        Copyright (c) 2025 Nexaman Creations
+        ========================================
+        */
+
+        // Mobile Menu Toggle
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-links a');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileMenuToggle.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : 'auto';
+        });
+
+        // Close mobile menu when link is clicked
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenuToggle.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+        });
+
+        // Close mobile menu on window resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                mobileMenuToggle.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Animated Counter
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number');
+            const speed = 200;
+
+            counters.forEach(counter => {
+                const updateCount = () => {
+                    const target = +counter.getAttribute('data-target');
+                    const count = +counter.innerText;
+                    const inc = target / speed;
+
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count + inc);
+                        setTimeout(updateCount, 1);
+                    } else {
+                        counter.innerText = target.toLocaleString();
+                    }
+                };
+                updateCount();
+            });
+        }
+
+        // Intersection Observer for counters
+        const statsSection = document.querySelector('.stats');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+        observer.observe(statsSection);
+
+        // Testimonial Carousel
+        let currentSlide = 0;
+        const testimonials = document.querySelectorAll('.testimonial');
+        const dots = document.querySelectorAll('.testimonial-dot');
+
+        function showSlide(index) {
+            testimonials.forEach(testimonial => testimonial.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+            
+            testimonials[index].classList.add('active');
+            dots[index].classList.add('active');
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % testimonials.length;
+            showSlide(currentSlide);
+        }
+
+        // Auto advance testimonials
+        setInterval(nextSlide, 4000);
+
+        // Dot navigation
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentSlide = index;
+                showSlide(currentSlide);
+            });
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Parallax effect for hero section
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            const heroVideo = document.querySelector('.hero-video');
+            
+            if (heroVideo) {
+                heroVideo.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+
+        // Portfolio item hover effects
+        document.querySelectorAll('.portfolio-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Dynamic navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(0, 0, 0, 0.95)';
+            } else {
+                navbar.style.background = 'rgba(0, 0, 0, 0.9)';
+            }
+        });
+
+        // Add entrance animations on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const animateOnScroll = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'slideInUp 0.8s ease forwards';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.portfolio-item, .stat-item').forEach(el => {
+            animateOnScroll.observe(el);
+        });
+    </script>
+</body>
+</html>
