@@ -8,7 +8,7 @@
 
 ---
 
-![Alt text](./influencerPro-themev1.png)
+![Alt text](./img1.png)
 
 ## 🎯 Overview
 
